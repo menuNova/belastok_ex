@@ -1,6 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Arvo:regular,italic,700,700italic&text=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ);
-@import url(https://fonts.googleapis.com/css?family=PT+Serif+Caption:regular,italic,700,700italic&text=абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ);
-@import url(https://fonts.googleapis.com/css?family=Limelight:regular);
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap');
 
 body {
   min-height: 100vh;
@@ -44,45 +42,29 @@ body {
 * {
   color: var(--color4);
   text-decoration: none;
-  font-weight: 400;
+  font-weight: 300;
   transition: opacity 300ms;
   margin: 0;
   padding: 0;
   border: 0;
   box-sizing: border-box;
+  font-family: 'Roboto Slab', serif;
 }
 
-@font-face {
-  font-family: "Universal";
-  src: local("Arvo");
-  unicode-range: U+0000-007F;
-}
-
-@font-face {
-  font-family: "Universal";
-  src: local("PT Serif Caption");
-  unicode-range: U+0400-04FF;
-}
-
-* {
-  font-family: "Universal", "Arvo", "PT Serif Caption", serif;
-}
 
 h1 {
   text-align: center;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 2.5em;
-  font-family: "Limelight", serif;
-  font-family: "PT Serif Caption", serif;
 }
 
 h2 {
-  font-weight: 600;
+  font-weight: 450;
   text-align: center;
 }
 
 h3 {
-  font-weight: 500;
+  font-weight: 400;
 }
 
 hr {

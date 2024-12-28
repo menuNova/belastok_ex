@@ -4,7 +4,8 @@
     --color1-1: #f4f9fb59;
     --color1-5: #f4f9fbc5;
     --color2: #f9b7bf;
-    --color3: #87232f;
+    --color3: rgb(0, 118, 0);
+    --color31: rgb(0, 118, 0);
     --color4: #030303;
 }
 
@@ -13,8 +14,9 @@
     --color1: #060606;
     --color1-1: #120f0c59;
     --color1-5: #150b04c5;
-    --color2: #39090f;
-    --color3: #c2404f;
+    --color2: #181818;
+    --color3: #305e30;
+    --color31: #469746;
     --color4: #f4f9fb;
 }
 
