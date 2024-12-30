@@ -1,5 +1,5 @@
 import { renderMenu, renderText } from "./render.js";
-import { cartData, data, languageData } from "./store.js";
+import { data } from "./store.js";
 
 const cartButton = document.querySelector('.nav__cart');
 const cart = document.querySelector('.cart');
@@ -17,7 +17,8 @@ export function main() {
     let changeLangDom = document.querySelector('.nav__changeLang')
 
     if (otherLanguages.length == 1) {
-        changeLangDom.innerHTML = `<a href="./menu-${languages[0]}.html">${languages[0].toUpperCase()}</a>`
+        let lang = languages.find(lang => lang !== currentLanguage);
+        changeLangDom.innerHTML = `<a href="./menu-${lang}.html">${lang.toUpperCase()}</a>`
     } else {
         changeLangDom.innerHTML = otherLanguages.map(lang => `<a href="./menu-${lang}.html">${lang.toUpperCase()}</a>`).join(' | ');
     };

@@ -1,7 +1,7 @@
 export let data = {
     valute: '$',
     language: document.documentElement.lang,
-    name: 'Shakespeare',
+    name: 'Belastok',
     languages: ['ru', 'en']
 };
 
@@ -305,7 +305,7 @@ export let getDishesData = function () {
 };
 
 export let cartData = {
-    
+
 };
 
 

@@ -3,7 +3,9 @@ import { setDishesData } from "./store.js";
 
 let auth = 'AKfycbxcNnJ01Uscel2ZfKe4SzQ-hqv9_0PwXQMafNJDPLfp-YemWqt0DVZqPtdFeYuvT6lF'
 let api = `https://script.google.com/macros/s/${auth}/exec`;
-let googleAPI = 'AIzaSyA-30dpwuMCCXOdhugVH-b2IuDL_cFGHm8'
+
+
+let USD_BYN_RATE = 3.3;
 
 
 
@@ -77,7 +79,7 @@ function processData(data) {
             const price = item[priceKey];
 
             if (portion && price) {
-                dish.price[portion] = parseFloat(price);
+                dish.price[portion] = Math.round(parseFloat(price) / USD_BYN_RATE * 10) / 10;
             }
         }
         dishData[categoryKey].items.push(dish);
@@ -114,4 +116,5 @@ export let additData = {
         },
     },
 };
+
 
