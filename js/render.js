@@ -138,7 +138,28 @@ function updateMenu(categoryName, dishData, index, portionName, action) {
             cartItem.count[portionName] += 1;
         } else if (action === 'remove' && cartItem.count[portionName] > 0) {
             cartItem.count[portionName] -= 1;
-        }
+        };
+        
+        try {
+            const item = cartData[categoryName].items.find(item=> item.name[data.language] === dishData.name[data.language]);
+
+            console.log(item);
+            console.log(cartData[categoryName].items)
+            console.log(0);
+
+            let sum = 0;
+            for (let key in item.count) {
+                sum += item.count[key] * item.price[key];
+            };
+            if (sum > 0) {
+                cardDom.classList.add('_inCart');
+            } else {
+                cardDom.classList.remove('_inCart');
+            };
+        } catch (error) {
+            console.log(error);
+            
+        };
 
         if (input) {
             input.value = cartItem.count[portionName] || 0;
@@ -243,21 +264,11 @@ function updateMenu(categoryName, dishData, index, portionName, action) {
                 const categorySection = document.querySelector(`.cart__list #${categoryName}`);
                 if (categorySection) {
                     categorySection.remove();
-                }
+                };
                 delete cartData[categoryName];
-            }
-        }
-    }
-
-    if (cardDom) {
-        if (cartData[categoryName] && cartData[categoryName].items.some(item =>
-            Object.values(item.count).reduce((sum, count) => sum + count, 0) > 0
-        )) {
-            cardDom.classList.add('_inCart');
-        } else {
-            cardDom.classList.remove('_inCart');
-        }
-    }
+            };
+        };
+    };
 
     const totalPrice = calculateTotalPrice();
     const totalElement = document.querySelector('.cart__total h2');
@@ -308,7 +319,7 @@ export function renderCart() {
 
         const itemsList = document.createElement('div');
         itemsList.classList.add('section__list');
-
+        
         category.items.forEach(item => {
             const itemIndex = item.index;
             const itemCard = document.createElement('div');
